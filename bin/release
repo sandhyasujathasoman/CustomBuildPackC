@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#TruBox CF release script
+# bin/release <build-dir>
+
+cat << EOF
+addons: []
+default_process_types: {
+	web: ./init.sh
+}
+EOF

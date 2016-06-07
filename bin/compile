@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#TruBox CF compile script
+
+DIR1=$1
+DIR2=$2
+
+CUSTOM_BUILD_PACK_DIR=$(dirname $(dirname $0))
+
+set -e
+set -o pipefail
+
+cd $DIR1
+
+gcc helloworld.c -o helloworld
+
+echo "started to create init file"
+cat > "$DIR1/init.sh" <<EOF
+#!/bin/bash
+# init C Application Server
+echo "Starting C Application Server"
+echo Port is $PORT
+/home/vcap/app/app
+EOF
+
+chmod 755 "$DIR1/init.sh"

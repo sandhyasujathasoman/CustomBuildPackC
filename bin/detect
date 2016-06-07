@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#TruBox CF detect script
+# bin/detect <build-dir>
+
+shopt -s nullglob
+files=(*.bac)
+if (( ${#files[@]} > 0 )); then
+	echo "BASIC"
+	exit 0
+else
+	exit 1
+fi
