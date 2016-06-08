@@ -20,7 +20,7 @@ cat > "$DIR1/init.sh" <<EOF
 # init C Application Server
 echo "Starting C Application Server"
 echo Port is $PORT
-/home/vcap/app/app
+/home/vcap/app/helloworld
 EOF
 
 chmod 755 "$DIR1/init.sh"
