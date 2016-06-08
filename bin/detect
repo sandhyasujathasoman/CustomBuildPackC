@@ -8,5 +8,6 @@ if (( ${#files[@]} > 0 )); then
 	echo "BASIC"
 	exit 0
 else
+	echo "Error"
 	exit 1
 fi
